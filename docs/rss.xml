@@ -1,3 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>韩王的博客</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link><description>我是韩王昌明，一名计科的大一新生</description><copyright>韩王的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/223481725?v=4&amp;size=64</url><title>avatar</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link></image><lastBuildDate>Tue, 18 Nov 2025 03:13:43 +0000</lastBuildDate><managingEditor>韩王的博客</managingEditor><ttl>60</ttl><webMaster>韩王的博客</webMaster><item><title>111</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/111.html</link><description>111。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/111.html</guid><pubDate>Tue, 18 Nov 2025 03:13:11 +0000</pubDate></item><item><title>2025/11/18</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</link><description>不知道。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</guid><pubDate>Tue, 18 Nov 2025 03:08:12 +0000</pubDate></item><item><title>2025/11/18</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</link><description>不知道。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</guid><pubDate>Tue, 18 Nov 2025 03:06:28 +0000</pubDate></item><item><title>七夕</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/qi-xi.html</link><description>  今天是2025年8月29日，七夕节
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>韩王的博客</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link><description>我是韩王昌明，一名计科的大一新生</description><copyright>韩王的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/223481725?v=4&amp;size=64</url><title>avatar</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link></image><lastBuildDate>Tue, 18 Nov 2025 03:25:47 +0000</lastBuildDate><managingEditor>韩王的博客</managingEditor><ttl>60</ttl><webMaster>韩王的博客</webMaster><item><title>2025/11/18</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</link><description>#第一次用c嘎嘎
+`#include&lt;cstdio&gt;
+
+using namespace std;
+
+int main(){
+	printf('hello world');
+	return 0;
+} 
+
+&gt; #include&lt;cstdio&gt;
+
+using namespace std;
+
+int main(){
+	printf('hello world');
+	return 0;
+} 
+`#include&lt;cstdio&gt;
+
+using namespace std;
+
+int main(){
+	printf('hello world');
+	return 0;
+} `。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</guid><pubDate>Tue, 18 Nov 2025 03:25:22 +0000</pubDate></item><item><title>111</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/111.html</link><description>111。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/111.html</guid><pubDate>Tue, 18 Nov 2025 03:13:11 +0000</pubDate></item><item><title>2025/11/18</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</link><description>不知道。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</guid><pubDate>Tue, 18 Nov 2025 03:08:12 +0000</pubDate></item><item><title>2025/11/18</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</link><description>不知道。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-18.html</guid><pubDate>Tue, 18 Nov 2025 03:06:28 +0000</pubDate></item><item><title>七夕</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/qi-xi.html</link><description>  今天是2025年8月29日，七夕节
   今天和她有说了大概是最后一次话吧。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/qi-xi.html</guid><pubDate>Sat, 30 Aug 2025 22:26:39 +0000</pubDate></item><item><title>hello world</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/hello%20world.html</link><description>hello world。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/hello%20world.html</guid><pubDate>Sun, 17 Aug 2025 04:03:53 +0000</pubDate></item></channel></rss>
