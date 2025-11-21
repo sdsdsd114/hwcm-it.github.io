@@ -1,5 +1,48 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>韩王的博客</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link><description>我是韩王昌明，一名计科的大一新生</description><copyright>韩王的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/223481725?v=4&amp;size=64</url><title>avatar</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link></image><lastBuildDate>Tue, 18 Nov 2025 16:22:22 +0000</lastBuildDate><managingEditor>韩王的博客</managingEditor><ttl>60</ttl><webMaster>韩王的博客</webMaster><item><title>大学规划</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/da-xue-gui-hua.html</link><description>- **大一夯实基础**：使用表格详细说明学期安排，包括数学/编程基础、核心课程学习、英语准备和实践竞赛，强调数学和编程语言基础。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/da-xue-gui-hua.html</guid><pubDate>Tue, 18 Nov 2025 03:58:50 +0000</pubDate></item><item><title>第一次用c++</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/di-yi-ci-yong-c%2B%2B.html</link><description>```cpp
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>韩王的博客</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link><description>我是韩王昌明，一名计科的大一新生</description><copyright>韩王的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/223481725?v=4&amp;size=64</url><title>avatar</title><link>https://sdsdsd114.github.io/hwcm-it.github.io</link></image><lastBuildDate>Fri, 21 Nov 2025 02:36:48 +0000</lastBuildDate><managingEditor>韩王的博客</managingEditor><ttl>60</ttl><webMaster>韩王的博客</webMaster><item><title>2025-11-21-贪心算法-背包问题.md</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-21--tan-xin-suan-fa---bei-bao-wen-ti-.md.html</link><description># 贪心算法解决部分背包问题
+以下是用C语言实现的部分背包问题代码，核心思路是按单位价值排序后贪心选择：
+
+```c
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+typedef struct {
+    int weight;
+    int value;
+    double unit_value;
+} Gold;
+
+int compare(const void* a, const void* b) {
+    Gold* goldA = (Gold*)a;
+    Gold* goldB = (Gold*)b;
+    if (goldA-&gt;unit_value &gt; goldB-&gt;unit_value) return -1;
+    if (goldA-&gt;unit_value &lt; goldB-&gt;unit_value) return 1;
+    return 0;
+}
+
+int main(){
+    int N, T;
+    scanf('%d%d', &amp;N, &amp;T);
+    Gold golds[100];
+    for(int i=0; i&lt;N; i++){
+        scanf('%d%d', &amp;golds[i].weight, &amp;golds[i].value);
+        golds[i].unit_value = (double)golds[i].value / golds[i].weight; 
+    }
+    qsort(golds, N, sizeof(Gold), compare);
+    double total_value = 0.0;
+    int remaining = T;
+    for(int i=0; i&lt;N; i++){
+        if(remaining &gt;= golds[i].weight){
+            total_value += golds[i].value;
+            remaining -= golds[i].weight;
+        } else {
+            total_value += golds[i].unit_value * remaining;
+            break;
+        }
+    }
+    printf('%.2f\n', total_value);
+    return 0;
+}。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-21--tan-xin-suan-fa---bei-bao-wen-ti-.md.html</guid><pubDate>Fri, 21 Nov 2025 02:36:16 +0000</pubDate></item><item><title>大学规划</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/da-xue-gui-hua.html</link><description>- **大一夯实基础**：使用表格详细说明学期安排，包括数学/编程基础、核心课程学习、英语准备和实践竞赛，强调数学和编程语言基础。</description><guid isPermaLink="true">https://sdsdsd114.github.io/hwcm-it.github.io/post/da-xue-gui-hua.html</guid><pubDate>Tue, 18 Nov 2025 03:58:50 +0000</pubDate></item><item><title>第一次用c++</title><link>https://sdsdsd114.github.io/hwcm-it.github.io/post/di-yi-ci-yong-c%2B%2B.html</link><description>```cpp
 #include &lt;cstdio&gt;
 
 int main() {
