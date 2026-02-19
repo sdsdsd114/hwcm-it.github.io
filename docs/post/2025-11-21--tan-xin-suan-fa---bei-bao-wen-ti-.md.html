@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://sdsdsd114.github.io/hwcm-it.github.io/post/2025-11-21--tan-xin-suan-fa---bei-bao-wen-ti-.md.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/223481725?v=4&size=64">
 <title>2025-11-21-贪心算法-背包问题.md</title>
-<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
 
 
 </head>
@@ -112,46 +112,47 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </code></pre>
 <h1>贪心算法解决部分背包问题</h1>
 <p>以下是用C语言实现的部分背包问题代码，核心思路是按单位价值排序后贪心选择：</p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span><span class="pl-s">&lt;stdio.h&gt;</span>
-<span class="pl-k">#include</span><span class="pl-s">&lt;stdlib.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
 
-<span class="pl-k">typedef</span> <span class="pl-k">struct</span> {
-    <span class="pl-smi">int</span> <span class="pl-c1">weight</span>;
-    <span class="pl-smi">int</span> <span class="pl-c1">value</span>;
-    <span class="pl-smi">double</span> <span class="pl-c1">unit_value</span>;
-} <span class="pl-smi">Gold</span>;
+typedef struct {
+    int weight;
+    int value;
+    double unit_value;
+} Gold;
 
-<span class="pl-smi">int</span> <span class="pl-en">compare</span>(<span class="pl-k">const</span> <span class="pl-smi">void</span><span class="pl-c1">*</span> <span class="pl-s1">a</span>, <span class="pl-k">const</span> <span class="pl-smi">void</span><span class="pl-c1">*</span> <span class="pl-s1">b</span>) {
-    <span class="pl-smi">Gold</span><span class="pl-c1">*</span> <span class="pl-s1">goldA</span> <span class="pl-c1">=</span> (<span class="pl-smi">Gold</span><span class="pl-c1">*</span>)<span class="pl-s1">a</span>;
-    <span class="pl-smi">Gold</span><span class="pl-c1">*</span> <span class="pl-s1">goldB</span> <span class="pl-c1">=</span> (<span class="pl-smi">Gold</span><span class="pl-c1">*</span>)<span class="pl-s1">b</span>;
-    <span class="pl-k">if</span> (<span class="pl-s1">goldA</span><span class="pl-c1">-&gt;</span><span class="pl-c1">unit_value</span> <span class="pl-c1">&gt;</span> <span class="pl-s1">goldB</span><span class="pl-c1">-&gt;</span><span class="pl-c1">unit_value</span>) <span class="pl-k">return</span> <span class="pl-c1">-1</span>;
-    <span class="pl-k">if</span> (<span class="pl-s1">goldA</span><span class="pl-c1">-&gt;</span><span class="pl-c1">unit_value</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">goldB</span><span class="pl-c1">-&gt;</span><span class="pl-c1">unit_value</span>) <span class="pl-k">return</span> <span class="pl-c1">1</span>;
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+int compare(const void* a, const void* b) {
+    Gold* goldA = (Gold*)a;
+    Gold* goldB = (Gold*)b;
+    if (goldA-&gt;unit_value &gt; goldB-&gt;unit_value) return -1;
+    if (goldA-&gt;unit_value &lt; goldB-&gt;unit_value) return 1;
+    return 0;
 }
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>(){
-    <span class="pl-smi">int</span> <span class="pl-c1">N</span>, <span class="pl-c1">T</span>;
-    <span class="pl-en">scanf</span>(<span class="pl-s">"%d%d"</span>, <span class="pl-c1">&amp;</span><span class="pl-c1">N</span>, <span class="pl-c1">&amp;</span><span class="pl-c1">T</span>);
-    <span class="pl-smi">Gold</span> <span class="pl-s1">golds</span>[<span class="pl-c1">100</span>];
-    <span class="pl-k">for</span>(<span class="pl-smi">int</span> <span class="pl-s1">i</span><span class="pl-c1">=</span><span class="pl-c1">0</span>; <span class="pl-s1">i</span><span class="pl-c1">&lt;</span><span class="pl-c1">N</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>){
-        <span class="pl-en">scanf</span>(<span class="pl-s">"%d%d"</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">weight</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">value</span>);
-        <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">unit_value</span> <span class="pl-c1">=</span> (<span class="pl-smi">double</span>)<span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">value</span> / <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">weight</span>; 
+int main(){
+    int N, T;
+    scanf("%d%d", &amp;N, &amp;T);
+    Gold golds[100];
+    for(int i=0; i&lt;N; i++){
+        scanf("%d%d", &amp;golds[i].weight, &amp;golds[i].value);
+        golds[i].unit_value = (double)golds[i].value / golds[i].weight; 
     }
-    <span class="pl-en">qsort</span>(<span class="pl-s1">golds</span>, <span class="pl-c1">N</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">Gold</span>), <span class="pl-s1">compare</span>);
-    <span class="pl-smi">double</span> <span class="pl-s1">total_value</span> <span class="pl-c1">=</span> <span class="pl-c1">0.0</span>;
-    <span class="pl-smi">int</span> <span class="pl-s1">remaining</span> <span class="pl-c1">=</span> <span class="pl-c1">T</span>;
-    <span class="pl-k">for</span>(<span class="pl-smi">int</span> <span class="pl-s1">i</span><span class="pl-c1">=</span><span class="pl-c1">0</span>; <span class="pl-s1">i</span><span class="pl-c1">&lt;</span><span class="pl-c1">N</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>){
-        <span class="pl-k">if</span>(<span class="pl-s1">remaining</span> &gt;= <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">weight</span>){
-            <span class="pl-s1">total_value</span> <span class="pl-c1">+=</span> <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">value</span>;
-            <span class="pl-s1">remaining</span> <span class="pl-c1">-=</span> <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">weight</span>;
-        } <span class="pl-k">else</span> {
-            <span class="pl-s1">total_value</span> <span class="pl-c1">+=</span> <span class="pl-s1">golds</span>[<span class="pl-s1">i</span>].<span class="pl-c1">unit_value</span> <span class="pl-c1">*</span> <span class="pl-s1">remaining</span>;
-            <span class="pl-k">break</span>;
+    qsort(golds, N, sizeof(Gold), compare);
+    double total_value = 0.0;
+    int remaining = T;
+    for(int i=0; i&lt;N; i++){
+        if(remaining &gt;= golds[i].weight){
+            total_value += golds[i].value;
+            remaining -= golds[i].weight;
+        } else {
+            total_value += golds[i].unit_value * remaining;
+            break;
         }
     }
-    <span class="pl-en">printf</span>(<span class="pl-s">"%.2f\n"</span>, <span class="pl-s1">total_value</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div></div>
+    printf("%.2f\n", total_value);
+    return 0;
+}
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
